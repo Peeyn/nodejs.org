@@ -14,7 +14,7 @@ pipeline {
 				echo "build stage"
 				sh 'docker build . -f build.dockerfile -t nrbuild'
 				sh 'docker volume create nrVolOut'
-				sh 'docker run --mount type=volume,src="nrVolOut",dst=/nodered nrbuild:latest bash -c "cd .. && cp -r /node-red_fork /nodered"'
+				sh 'docker run --mount type=volume,src="nrVolOut",dst=/nodered nrbuild:latest bash -c "cd .. && cp -r /nodejs.org /nodered"'
 			}
 		}
 		
